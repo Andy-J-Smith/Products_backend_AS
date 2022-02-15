@@ -1,3 +1,4 @@
+from email.mime import image
 from rest_framework.decorators import api_view
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
@@ -32,5 +33,15 @@ def product_detail(request, pk):
     elif request.method == 'DELETE':
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['POST'])
+def add_image(request):
+    product_image =  Product.image
+    if request.method == 'POST':
+        serializer = ProductSerializer(product_image)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(product_image, status=status.HTTP_201_CREATED)
+
 
 
