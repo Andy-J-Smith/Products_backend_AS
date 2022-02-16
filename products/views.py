@@ -34,14 +34,14 @@ def product_detail(request, pk):
         product.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['POST'])
+@api_view(['PUT'])
 def add_image(request):
-    product_image =  Product.image
-    if request.method == 'POST':
-        serializer = ProductSerializer(product_image)
+    
+    if request.method == 'PUT':
+        serializer = ProductSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        return Response(product_image, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 

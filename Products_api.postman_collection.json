@@ -36,7 +36,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Yuppy Huggy\",\n    \"description\": \"Cup Huggy\",\n    \"price\": 10,\n    \"inventory_quantity\": 200 \n}",
+					"raw": "  {\n        \"title\": \"Yuppy Cup\",\n        \"description\": \"coffee cup\",\n        \"price\": 20.0,\n        \"inventory_quantity\": 1000,\n        \"image\": \"\"\n  }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,7 +94,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Yuppy Huggy\",\n    \"description\": \"Can Huggy\",\n    \"price\": 10.0,\n    \"inventory_quantity\": 200\n}",
+					"raw": "{\n\n        \"title\": \"Yuppy Cup\",\n        \"description\": \"coffee cup\",\n        \"price\": 20.0,\n        \"inventory_quantity\": 1000,\n        \"image\": \"https://image.shutterstock.com/image-photo/thermos-bottle-tumbler-glass-on-600w-758689741.jpg\"\n    \n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -140,6 +140,40 @@
 						"api",
 						"products",
 						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add_image",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n        \"title\": \"Yuppy Cup\",\n        \"description\": \"coffee cup\",\n        \"price\": 20.0,\n        \"inventory_quantity\": 1000,\n        \"image\": \"https://image.shutterstock.com/image-photo/thermos-bottle-tumbler-glass-on-600w-758689741.jpg\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/products/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"1",
 						""
 					]
 				}
